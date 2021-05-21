@@ -1,0 +1,135 @@
+\documentclass[
+  pre,
+  twocolumn,
+  twoside,
+  byrevtex,
+  superscriptaddress,
+  floatfix,
+  longbibliography,
+]{revtex4-1}
+
+%% \documentclass[pre,
+%%   twocolumn,
+%%   twoside,
+%%   byrevtex,
+%%   superscriptaddress,
+%%   showpacs,
+%%   floatfix,
+%% ]{revtex4-1}
+
+%% \documentclass[aps,
+%%   twocolumn,
+%% ]{revtex4-1}
+
+%% \documentclass[aps,
+%%   preprint,
+%% ]{revtex4-1}
+
+%% \documentclass[aps,
+%%   twocolumn,
+%%   draft,
+%% ]{revtex4-1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% general settings, packages, macros
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% load in root name
+\usepackage[realmainfile]{currfile}
+\input{\currfilebase.settings}
+\input{\filenamebase.settings}
+
+\setboolean{twocolswitch}{true}
+
+%% \bibliographystyle{unsrtabbrv}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\suppmaterial}{Anciliary files}
+\newcommand{\onlineappendices}{Online Appendices (\href{http://compstorylab.org/trumpstoryturbulence/}{compstorylab.org/trumpstoryturbulence/})}
+\newcommand{\onlineappendicesplain}{Online Appendices}
+%% \newcommand{\suppmaterial}{Supplementary Material}
+%% \newcommand{\suppmaterial}{Appendices}
+\newcommand{\arxivonly}[1]{#1}
+
+%%%%%% author(s), address(es) plus abstract
+
+\begin{document}
+
+\title{\protect
+  \input{\filenamebase.title}
+}
+
+\input{\filenamebase.author}
+
+\date{\today}
+
+\begin{abstract}
+  \protect
+  \input{\filenamebase.abs} 
+\end{abstract}
+
+\input{\filenamebase.pacs}
+
+\maketitle
+
+%%%%%%%%% end of author(s), address(es) plus abstract
+
+\input{\filenamebase.body}
+
+%% \section{Methods}
+%% 
+%% \input{\filenamebase.methods}
+
+\acknowledgments
+\input{\filenamebase.acknowledgments}
+
+\bibliography{\filenamebase}
+%% \input{\filenamebase.biblio}
+
+\clearpage
+
+%% %% appendix
+%%
+%% %% optional: switch to single column
+%% \onecolumngrid
+%% 
+%% \appendix
+%% \section{Auxiliary organ details}
+%% 
+%% \setcounter{page}{1}
+%% \renewcommand{\thepage}{A\arabic{page}}
+%% \renewcommand{\thefigure}{A\arabic{figure}}
+%% \renewcommand{\thetable}{A\arabic{table}}
+%% \setcounter{figure}{0}
+%% \setcounter{table}{0}
+%% 
+%% \input{\filenamebase.appendix}
+
+%% %% supplementary
+%% 
+%% %% %% optional: switch to single column
+%% \onecolumngrid
+%% 
+%% %% following records the starting page number of the supplementary
+%% %% section in a file called startsupp.txt
+%% %% enables script-based breaking of manuscript and supplementary
+%% \newwrite\tempfile
+%% \immediate\openout\tempfile=startsupp.txt
+%% \immediate\write\tempfile{\thepage}
+%% \immediate\closeout\tempfile
+%% 
+%% \setcounter{page}{1}
+%% \renewcommand{\thepage}{S\arabic{page}}
+%% 
+%% \renewcommand{\thefigure}{S\arabic{figure}}
+%% \setcounter{figure}{0}
+%% 
+%% \renewcommand{\thetable}{S\arabic{table}}
+%% \setcounter{table}{0}
+%% 
+%% \renewcommand{\thesection}{S\arabic{section}}
+%% \setcounter{section{0}
+%% 
+%% \input{\filenamebase.supplementary}
+
+\end{document}
